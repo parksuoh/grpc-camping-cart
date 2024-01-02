@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.example.grpc;
+
+
+message DeleteCartItemByOrderRequest {
+  int64 cartItemId = 1;
+}
+
+message DeleteCartItemByOrderResponse {
+  bool ok = 1;
+}
+
+
+service DeleteCartItemByOrderService {
+  rpc deleteCartItem(DeleteCartItemByOrderRequest) returns (DeleteCartItemByOrderResponse);
+}

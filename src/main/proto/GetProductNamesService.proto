@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.example.grpc;
+
+message GetProductNamesRequest {
+  int64 productId = 1;
+  int64 firstOptionId = 2;
+  int64 secondOptionId = 3;
+}
+
+message GetProductNamesResponse{
+  string productName = 1;
+  int64 productPrice =2;
+  string firstOptionName = 3;
+  int64 firstOptionPrice = 4;
+  string secondOptionName = 5;
+  int64 secondOptionPrice = 6;
+}
+
+service GetProductNamesService {
+  rpc GetProductNames(GetProductNamesRequest) returns (GetProductNamesResponse);
+}

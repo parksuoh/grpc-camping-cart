@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.example.grpc;
+
+
+message MatchProductIdsRequest {
+  int64 productId = 1;
+  int64 firstOptionId = 2;
+  int64 secondOptionId = 3;
+}
+
+message MatchProductIdsResponse{
+  bool ok = 1;
+}
+
+service MatchProductIdsService {
+  rpc MatchProductIds(MatchProductIdsRequest) returns (MatchProductIdsResponse);
+}
+
+
+

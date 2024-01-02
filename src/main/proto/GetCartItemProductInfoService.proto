@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.example.grpc;
+
+
+message GetCartItemProductInfoRequest {
+  int64 cartItemId = 1;
+}
+
+message GetCartItemProductInfoResponse {
+  int64 productId = 1;
+  int64 firstOptionId = 2;
+  int64 secondOptionId = 3;
+  int32 quantity = 4;
+}
+
+
+service GetCartItemProductInfoService {
+  rpc GetCartItemProductInfo(GetCartItemProductInfoRequest) returns (GetCartItemProductInfoResponse);
+}
